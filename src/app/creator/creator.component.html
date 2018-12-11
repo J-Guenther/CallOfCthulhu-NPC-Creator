@@ -1,0 +1,91 @@
+<h2>{{character.name | uppercase}} Details</h2>
+<div>
+  <label>Name:
+    <input [(ngModel)]="character.name" placeholder="H.P. Lovecraft">
+  </label>
+</div>
+<div>
+  <label>Description:
+    <input [(ngModel)]="character.description" placeholder="Mysterious Author">
+  </label>
+</div>
+<div>
+  <label>STR:
+    <input [(ngModel)]="character.strength" placeholder="0" (keyup)="StrChange()" type="number">
+  </label>
+</div>
+<div>
+  <label>CON:
+    <input [(ngModel)]="character.constitution" placeholder="0" (keyup)="ConChange()" type="number">
+  </label>
+</div>
+<div>
+  <label>SIZ:
+    <input [(ngModel)]="character.size" placeholder="0" (keyup)="SizChange()" type="number">
+  </label>
+</div>
+<div>
+  <label>DEX:
+    <input [(ngModel)]="character.dexterity" placeholder="0" (keyup)="DexChange()" type="number">
+  </label>
+</div>
+<div>
+  <label>INT:
+    <input [(ngModel)]="character.intelligence" placeholder="0" type="number">
+  </label>
+</div>
+<div>
+  <label>APP:
+    <input [(ngModel)]="character.appearance" placeholder="0" type="number">
+  </label>
+</div>
+<div>
+  <label>POW:
+    <input [(ngModel)]="character.power" placeholder="0" (keyup)="PowChange()" type="number">
+  </label>
+</div>
+<div>
+  <label>EDU:
+    <input [(ngModel)]="character.education" placeholder="0" type="number">
+  </label>
+</div>
+<div>
+  <label>Damage Bonus:
+    <input [(ngModel)]="character.damageBonus" placeholder="0">
+  </label>
+</div>
+<div>
+  <label>Build:
+    <input [(ngModel)]="character.build" placeholder="0">
+  </label>
+</div>
+<div>
+  <label>Move:
+    <input [(ngModel)]="character.move" placeholder="0">
+  </label>
+</div>
+<div>
+  <label>Fighting Skills:
+    <input [(ngModel)]="character.fightingSkills" placeholder="">
+  </label>
+</div>
+<div>
+  <label>Dodge:
+    <input [(ngModel)]="character.dodge" placeholder="0">
+  </label>
+</div>
+<div>
+  <label>Armor:
+    <input [(ngModel)]="character.armor" placeholder="None">
+  </label>
+</div>
+<div>
+  <label>Skills:
+    <input [(ngModel)]="character.skills" placeholder="">
+  </label>
+</div>
+<div>
+  <label>Additional Info:
+    <input [(ngModel)]="character.info" placeholder="">
+  </label>
+</div>
