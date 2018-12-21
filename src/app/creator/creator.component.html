@@ -1,93 +1,118 @@
-<h2>{{character.name | uppercase}} Details</h2>
-<div>
-  <label>Name:
-    <input [(ngModel)]="character.name" placeholder="H.P. Lovecraft">
-  </label>
+<!-- <h2>{{character.name | uppercase}} Details</h2> -->
+<div class="row">
+  <div class="col-lg-6">
+    <label>Name:
+      <input [(ngModel)]="character.name" placeholder="H.P. Lovecraft" class="form-control">
+    </label>
+  </div>
+  <div class="col-lg-6 form-group">
+    <label>Description:
+      <input [(ngModel)]="character.description" placeholder="Mysterious Author" class="form-control">
+    </label>
+  </div>
+</div>
+<div class="row">
+  <div class="col-3 form-group">
+    <label>STR:
+      <input [(ngModel)]="character.strength" placeholder="0" (keyup)="StrChange()" type="number" class="form-control no-spinners">
+    </label>
+  </div>
+  <div class="col-3 form-group">
+    <label>CON:
+      <input [(ngModel)]="character.constitution" placeholder="0" (keyup)="ConChange()" type="number" class="form-control no-spinners">
+    </label>
+  </div>
+  <div class="col-3 form-group">
+    <label>SIZ:
+      <input [(ngModel)]="character.size" placeholder="0" (keyup)="SizChange()" type="number" class="form-control no-spinners">
+    </label>
+  </div>
+  <div class="col-3 form-group">
+    <label>DEX:
+      <input [(ngModel)]="character.dexterity" placeholder="0" (keyup)="DexChange()" type="number" class="form-control no-spinners">
+    </label>
+  </div>
+</div>
+<div class="row">
+  <div class="col-3 form-group">
+    <label>INT:
+      <input [(ngModel)]="character.intelligence" placeholder="0" type="number" class="form-control no-spinners">
+    </label>
+  </div>
+  <div class="col-3 form-group">
+    <label>APP:
+      <input [(ngModel)]="character.appearance" placeholder="0" type="number" class="form-control no-spinners">
+    </label>
+  </div>
+  <div class="col-3 form-group">
+    <label>POW:
+      <input [(ngModel)]="character.power" placeholder="0" (keyup)="PowChange()" type="number" class="form-control no-spinners">
+    </label>
+  </div>
+  <div class="col-3 form-group">
+    <label>EDU:
+      <input [(ngModel)]="character.education" placeholder="0" type="number" class="form-control no-spinners">
+    </label>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-4">
+    <label>Damage Bonus:
+      <input [(ngModel)]="character.damageBonus" placeholder="0" class="form-control">
+    </label>
+  </div>
+  <div class="col-md-4">
+    <label>Build:
+      <input [(ngModel)]="character.build" placeholder="0" class="form-control">
+    </label>
+  </div>
+  <div class="col-md-4">
+    <label>Move:
+      <input [(ngModel)]="character.move" placeholder="0" class="form-control">
+    </label>
+  </div>
+</div>
+<div class="row">
+  <div class="col-12">
+    <label>Fighting Skills:
+      <tag-input [(ngModel)]="character.fightingSkills" [modelAsStrings]="true" [onAdding]="transform" [dragZone]="fightZone">
+      </tag-input>
+    </label>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-6">
+    <label>Dodge:
+      <input [(ngModel)]="character.dodge" placeholder="0" class="form-control">
+    </label>
+  </div>
+  <div class="col-sm-6">
+    <label>Armor:
+      <input [(ngModel)]="character.armor" placeholder="None" class="form-control">
+    </label>
+  </div>
+</div>
+<div class="row">
+  <div class="col-12">
+    <label>Skills:
+      <tag-input [(ngModel)]="character.skills" [modelAsStrings]="true" [onAdding]="transform" [dragZone]="skillZone">
+      </tag-input>
+    </label>
+  </div>
+</div>
+<div class="row">
+  <div class="col-12">
+    <label>Additional Info:
+      <textarea [(ngModel)]="character.info" placeholder="" class="form-control" rows="3"></textarea>>
+    </label>
+  </div>
 </div>
 <div>
-  <label>Description:
-    <input [(ngModel)]="character.description" placeholder="Mysterious Author">
+  <label>JSON:
+    <input [(ngModel)]="jsonString" placeholder="" class="form-control" rows="3">
   </label>
+  <br>
+  <button (click)="MakeJson()">Make JSON</button>
+  <button (click)="LoadJson()">Load JSON</button>
 </div>
-<div>
-  <label>STR:
-    <input [(ngModel)]="character.strength" placeholder="0" (keyup)="StrChange()" type="number">
-  </label>
-</div>
-<div>
-  <label>CON:
-    <input [(ngModel)]="character.constitution" placeholder="0" (keyup)="ConChange()" type="number">
-  </label>
-</div>
-<div>
-  <label>SIZ:
-    <input [(ngModel)]="character.size" placeholder="0" (keyup)="SizChange()" type="number">
-  </label>
-</div>
-<div>
-  <label>DEX:
-    <input [(ngModel)]="character.dexterity" placeholder="0" (keyup)="DexChange()" type="number">
-  </label>
-</div>
-<div>
-  <label>INT:
-    <input [(ngModel)]="character.intelligence" placeholder="0" type="number">
-  </label>
-</div>
-<div>
-  <label>APP:
-    <input [(ngModel)]="character.appearance" placeholder="0" type="number">
-  </label>
-</div>
-<div>
-  <label>POW:
-    <input [(ngModel)]="character.power" placeholder="0" (keyup)="PowChange()" type="number">
-  </label>
-</div>
-<div>
-  <label>EDU:
-    <input [(ngModel)]="character.education" placeholder="0" type="number">
-  </label>
-</div>
-<div>
-  <label>Damage Bonus:
-    <input [(ngModel)]="character.damageBonus" placeholder="0">
-  </label>
-</div>
-<div>
-  <label>Build:
-    <input [(ngModel)]="character.build" placeholder="0">
-  </label>
-</div>
-<div>
-  <label>Move:
-    <input [(ngModel)]="character.move" placeholder="0">
-  </label>
-</div>
-<div>
-  <label>Fighting Skills:
-    <tag-input [(ngModel)]="character.fightingSkills" [modelAsStrings]="true" [onAdding]="transform" [dragZone]="fightZone">
-    </tag-input>
-  </label>
-</div>
-<div>
-  <label>Dodge:
-    <input [(ngModel)]="character.dodge" placeholder="0">
-  </label>
-</div>
-<div>
-  <label>Armor:
-    <input [(ngModel)]="character.armor" placeholder="None">
-  </label>
-</div>
-<div>
-  <label>Skills:
-    <tag-input [(ngModel)]="character.skills" [modelAsStrings]="true" [onAdding]="transform" [dragZone]="skillZone">
-    </tag-input>
-  </label>
-</div>
-<div>
-  <label>Additional Info:
-    <input [(ngModel)]="character.info" placeholder="">
-  </label>
-</div>
+

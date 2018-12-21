@@ -14,6 +14,7 @@ import {Observable, of, from } from 'rxjs';
 export class CreatorComponent implements OnInit {
 
   character: Character;
+  jsonString: string;
 
   constructor(private characterService: CharacterService) { 
     
@@ -127,6 +128,18 @@ export class CreatorComponent implements OnInit {
 
   PowChange(){
     this.CalculateSanity();
+  }
+
+  MakeJson(){  
+    this.jsonString = JSON.stringify(this.character);
+  }
+
+  LoadJson(){
+    const character: Character = JSON.parse(this.jsonString);
+    for (let key in this.character) {
+      this.character[key] = character[key];
+    }    
+    
   }
 
 
