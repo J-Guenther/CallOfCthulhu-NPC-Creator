@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CharacterService } from '../character.service';
 import { Character } from '../creator/character';
+import  html2canvas  from 'html2canvas';
 
 @Component({
   selector: 'app-viewer',
@@ -15,6 +16,15 @@ export class ViewerComponent implements OnInit {
 
   ngOnInit() {
     this.characterService.currentCharacter.subscribe(character => this.character = character);
+  }
+
+  MakeImage(){
+    html2canvas(document.querySelector("#output"), { letterRendering: 1, allowTaint : true}).then(canvas => {
+        var link = document.createElement('a');
+          link.download = 'my-image-name.png';
+          link.href = canvas.toDataURL();
+          link.click();
+    });
   }
 
 }

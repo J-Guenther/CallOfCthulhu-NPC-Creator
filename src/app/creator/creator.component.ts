@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Character } from './character';
 import { FormsModule } from '@angular/forms';
 import { CharacterService } from '../character.service';
+import {Observable, of, from } from 'rxjs';
+
+
 
 @Component({
   selector: 'app-creator',
@@ -19,6 +22,24 @@ export class CreatorComponent implements OnInit {
   ngOnInit() {
     this.characterService.currentCharacter.subscribe(character => this.character = character);
   }
+
+
+  // TODO make Tag Input Object based, not string based
+  public transform(value: string): Observable<string> {
+    let finalTag = ""
+    if (!(value.indexOf('%') > -1)){
+      finalTag = value.replace(/[^\w -]/g, '').trim().replace(/\W+/g, " ")
+    
+    
+      let percentage = finalTag.match(/\d+/g);
+      if(finalTag.length > 0 && Number(percentage)){
+        finalTag += "% (" + Number(percentage)/2 + "/" + Number(percentage)/5 + ")";	
+      }	
+    } else{
+      finalTag = value;
+    }
+    return of(finalTag);
+}
 
   CalculateDamageBonusAndBuild(){
     const value: number =  this.character.strength + this.character.size;
@@ -107,5 +128,6 @@ export class CreatorComponent implements OnInit {
   PowChange(){
     this.CalculateSanity();
   }
+
 
 }

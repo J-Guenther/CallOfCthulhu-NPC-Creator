@@ -45,11 +45,11 @@ export class Character {
       this.build = 0;
       this.move = 0;
 
-      this.fightingSkills = null;
+      this.fightingSkills = ['Fighting 60% (30/12)'];
       this.dodge = 0;
       this.armor = 0;
 
-      this.skills = null;
+      this.skills = ['Spot Hidden 30% (15/7)'];
       
       this.info = '';
       this.imageUrl = '';

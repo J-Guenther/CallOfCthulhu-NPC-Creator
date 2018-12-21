@@ -66,7 +66,8 @@
 </div>
 <div>
   <label>Fighting Skills:
-    <input [(ngModel)]="character.fightingSkills" placeholder="">
+    <tag-input [(ngModel)]="character.fightingSkills" [modelAsStrings]="true" [onAdding]="transform" [dragZone]="fightZone">
+    </tag-input>
   </label>
 </div>
 <div>
@@ -81,7 +82,8 @@
 </div>
 <div>
   <label>Skills:
-    <input [(ngModel)]="character.skills" placeholder="">
+    <tag-input [(ngModel)]="character.skills" [modelAsStrings]="true" [onAdding]="transform" [dragZone]="skillZone">
+    </tag-input>
   </label>
 </div>
 <div>
