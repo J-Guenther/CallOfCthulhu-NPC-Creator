@@ -14,21 +14,25 @@
 <div class="row">
   <div class="col-3 form-group">
     <label>STR:
+        <button type="button" (click)="RandomValue('STR')" class="randomize-button"><i class="material-icons">casino</i></button>
       <input [(ngModel)]="character.strength" placeholder="0" (keyup)="StrChange()" type="number" class="form-control no-spinners">
     </label>
   </div>
   <div class="col-3 form-group">
     <label>CON:
+        <button type="button" (click)="RandomValue('CON')" class="randomize-button"><i class="material-icons">casino</i></button>
       <input [(ngModel)]="character.constitution" placeholder="0" (keyup)="ConChange()" type="number" class="form-control no-spinners">
     </label>
   </div>
   <div class="col-3 form-group">
     <label>SIZ:
+        <button type="button" (click)="RandomValue('SIZ')" class="randomize-button"><i class="material-icons">casino</i></button>
       <input [(ngModel)]="character.size" placeholder="0" (keyup)="SizChange()" type="number" class="form-control no-spinners">
     </label>
   </div>
   <div class="col-3 form-group">
     <label>DEX:
+        <button type="button" (click)="RandomValue('DEX')" class="randomize-button"><i class="material-icons">casino</i></button>
       <input [(ngModel)]="character.dexterity" placeholder="0" (keyup)="DexChange()" type="number" class="form-control no-spinners">
     </label>
   </div>
@@ -36,21 +40,25 @@
 <div class="row">
   <div class="col-3 form-group">
     <label>INT:
+        <button type="button" (click)="RandomValue('INT')" class="randomize-button"><i class="material-icons">casino</i></button>
       <input [(ngModel)]="character.intelligence" placeholder="0" type="number" class="form-control no-spinners">
     </label>
   </div>
   <div class="col-3 form-group">
     <label>APP:
+        <button type="button" (click)="RandomValue('APP')" class="randomize-button"><i class="material-icons">casino</i></button>
       <input [(ngModel)]="character.appearance" placeholder="0" type="number" class="form-control no-spinners">
     </label>
   </div>
   <div class="col-3 form-group">
     <label>POW:
+        <button type="button" (click)="RandomValue('POW')" class="randomize-button"><i class="material-icons">casino</i></button>
       <input [(ngModel)]="character.power" placeholder="0" (keyup)="PowChange()" type="number" class="form-control no-spinners">
     </label>
   </div>
   <div class="col-3 form-group">
     <label>EDU:
+        <button type="button" (click)="RandomValue('EDU')" class="randomize-button"><i class="material-icons">casino</i></button>
       <input [(ngModel)]="character.education" placeholder="0" type="number" class="form-control no-spinners">
     </label>
   </div>
@@ -75,7 +83,7 @@
 <div class="row">
   <div class="col-12">
     <label>Fighting Skills:
-      <tag-input [(ngModel)]="character.fightingSkills" [modelAsStrings]="true" [onAdding]="transform" [dragZone]="fightZone">
+      <tag-input [(ngModel)]="character.fightingSkills" [modelAsStrings]="true" [onAdding]="transform" [dragZone]="'fightZone'">
       </tag-input>
     </label>
   </div>
@@ -95,7 +103,7 @@
 <div class="row">
   <div class="col-12">
     <label>Skills:
-      <tag-input [(ngModel)]="character.skills" [modelAsStrings]="true" [onAdding]="transform" [dragZone]="skillZone">
+      <tag-input [(ngModel)]="character.skills" [modelAsStrings]="true" [onAdding]="transform" [dragZone]="'skillZone'">
       </tag-input>
     </label>
   </div>
@@ -103,7 +111,7 @@
 <div class="row">
   <div class="col-12">
     <label>Additional Info:
-      <textarea [(ngModel)]="character.info" placeholder="" class="form-control" rows="3"></textarea>>
+      <textarea [(ngModel)]="character.info" placeholder="" class="form-control" rows="3"></textarea>
     </label>
   </div>
 </div>

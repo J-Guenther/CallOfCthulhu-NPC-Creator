@@ -1,76 +1,78 @@
-<div id="output">
-<div class="row">
-    <div class="col-12">
-        <strong>
-            <span *ngIf="character.name == ''">Name</span>
-            <span>{{character.name}}</span>
-        </strong>
+<div id="shadow">
+    <div id="output">
+        <div class="row">
+            <div class="col-12">
+                <strong>
+                    <span *ngIf="character.name == ''">Name</span>
+                    <span>{{character.name}}</span>
+                </strong>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <em>
+                    <span *ngIf="character.description == ''">Description</span>
+                    <span>{{character.description}}</span>
+                </em>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <table class="table">
+                    <tr>
+                        <td>STR: {{character.strength}}</td>
+                        <td>CON: {{character.constitution}}</td>
+                        <td>SIZ: {{character.size}}</td>
+                        <td>DEX: {{character.dexterity}}</td>
+                        <td>INT: {{character.intelligence}}</td>
+                    </tr>
+                    <tr>
+                        <td>APP: {{character.appearance}}</td>
+                        <td>POW: {{character.power}}</td>
+                        <td>EDU: {{character.education}}</td>
+                        <td>SAN: {{character.sanity}}</td>
+                        <td>HP:  {{character.health}}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">
+                Damage Bonus: {{character.damageBonus}}
+            </div>
+            <div class="col-sm-4">
+                Build: {{character.build}}
+            </div>
+            <div class="col-sm-4">
+                Move: {{character.move}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                Fighting Skills:
+                {{character.fightingSkills}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                Dodge: {{character.dodge}}
+            </div>
+            <div class="col-sm-6">
+                Armor: {{character.armor}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                Skills: 
+                {{character.skills}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                Information: 
+                {{character.info}}
+            </div>
+        </div>
     </div>
-</div>
-<div class="row">
-    <div class="col-12">
-        <em>
-            <span *ngIf="character.description == ''">Description</span>
-            <span>{{character.description}}</span>
-        </em>
-    </div>
-</div>
-<div class="row">
-    <div class="col-12">
-        <table class="table">
-            <tr>
-                <td>STR: {{character.strength}}</td>
-                <td>CON: {{character.constitution}}</td>
-                <td>SIZ: {{character.size}}</td>
-                <td>DEX: {{character.dexterity}}</td>
-                <td>INT: {{character.intelligence}}</td>
-            </tr>
-            <tr>
-                <td>APP: {{character.appearance}}</td>
-                <td>POW: {{character.power}}</td>
-                <td>EDU: {{character.education}}</td>
-                <td>SAN: {{character.sanity}}</td>
-                <td>HP:  {{character.health}}</td>
-            </tr>
-        </table>
-    </div>
-</div>
-<div class="row">
-    <div class="col-sm-4">
-        Damage Bonus: {{character.damageBonus}}
-    </div>
-    <div class="col-sm-4">
-        Build: {{character.build}}
-    </div>
-    <div class="col-sm-4">
-        Move: {{character.move}}
-    </div>
-</div>
-<div class="row">
-    <div class="col-12">
-        Fighting Skills:
-        {{character.fightingSkills}}
-    </div>
-</div>
-<div class="row">
-    <div class="col-sm-6">
-        Dodge: {{character.dodge}}
-    </div>
-    <div class="col-sm-6">
-        Armor: {{character.armor}}
-    </div>
-</div>
-<div class="row">
-    <div class="col-12">
-        Skills: 
-        {{character.skills}}
-    </div>
-</div>
-<div class="row">
-    <div class="col-12">
-        Information: 
-        {{character.info}}
-    </div>
-</div>
 </div>
 <button (click)="MakeImage()">Make Image</button>

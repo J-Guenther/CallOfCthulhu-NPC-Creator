@@ -130,6 +130,57 @@ export class CreatorComponent implements OnInit {
     this.CalculateSanity();
   }
 
+  RandomD3(): number{
+    let sum: number = 0;
+    sum += Math.floor(Math.random() * 6) + 1;
+    sum += Math.floor(Math.random() * 6) + 1;
+    sum += Math.floor(Math.random() * 6) + 1;
+    return sum;
+  }
+
+  RandomD2(){
+    let sum: number = 0;
+    sum += Math.floor(Math.random() * 6) + 1;
+    sum += Math.floor(Math.random() * 6) + 1;
+    return sum;
+  }
+
+  RandomValue(id){
+    switch (id) {
+      case 'STR':
+        this.character.strength = this.RandomD3() * 5;
+        this.StrChange();
+        break;
+      case 'EDU':
+        this.character.education = (this.RandomD2() + 6) * 5;
+      break;
+      case 'CON':
+        this.character.constitution = this.RandomD3() * 5;
+        this.ConChange();
+      break;
+      case 'SIZ':
+        this.character.size = (this.RandomD2() + 6) * 5;
+        this.SizChange();
+      break;
+      case 'DEX':
+        this.character.dexterity = this.RandomD3() * 5;
+        this.DexChange();
+      break;
+      case 'INT':
+        this.character.intelligence = (this.RandomD2() + 6) * 5;
+      break;
+      case 'APP':
+        this.character.appearance = this.RandomD3() * 5;
+      break;
+      case 'POW':
+        this.character.power = this.RandomD3() * 5;
+        this.PowChange();
+      break;
+      default:
+        break;
+    }
+  }
+
   MakeJson(){  
     this.jsonString = JSON.stringify(this.character);
   }
