@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { CharacterService } from '../character.service';
 import { Character } from '../creator/character';
 import  html2canvas  from 'html2canvas';
+import * as htmlToImage from 'html-to-image';
+import { saveAs } from 'file-saver';
 
 @Component({
   selector: 'app-viewer',
@@ -19,12 +21,21 @@ export class ViewerComponent implements OnInit {
   }
 
   MakeImage(){
+    console.log("Make image")
     html2canvas(document.querySelector("#output"), { letterRendering: 1, allowTaint : true}).then(canvas => {
+      console.log("html2canvas");
         var link = document.createElement('a');
           link.download = 'my-image-name.png';
           link.href = canvas.toDataURL();
           link.click();
     });
+  }
+
+  MakeImage2(){
+    htmlToImage.toBlob(document.getElementById('output'))
+  .then(function (blob) {
+    saveAs(blob, 'my-node.png');
+  });
   }
 
 }

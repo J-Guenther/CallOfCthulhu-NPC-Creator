@@ -65,6 +65,23 @@
 </div>
 <div class="row">
   <div class="col-md-4">
+    <label>Sanity:
+      <input [(ngModel)]="character.sanity" placeholder="0" class="form-control">
+    </label>
+  </div>
+  <div class="col-md-4">
+    <label>HP:
+      <input [(ngModel)]="character.health" placeholder="0" class="form-control">
+    </label>
+  </div>
+  <div class="col-md-4">
+    <label>Magic Points:
+      <input [(ngModel)]="character.magicPoints" placeholder="0" class="form-control">
+    </label>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-4">
     <label>Damage Bonus:
       <input [(ngModel)]="character.damageBonus" placeholder="0" class="form-control">
     </label>
@@ -82,7 +99,7 @@
 </div>
 <div class="row">
   <div class="col-12">
-    <label>Fighting Skills:
+    <label>Skills <span class="smallDescription">(Write: 'Skillname Number' press enter (% will be added automatically)</span>:
       <tag-input [(ngModel)]="character.fightingSkills" [modelAsStrings]="true" [onAdding]="transform" [dragZone]="'fightZone'">
       </tag-input>
     </label>
@@ -102,7 +119,7 @@
 </div>
 <div class="row">
   <div class="col-12">
-    <label>Skills:
+    <label>Skills <span class="smallDescription">(Write: 'Skillname Number' press enter (% will be added automatically)</span>:
       <tag-input [(ngModel)]="character.skills" [modelAsStrings]="true" [onAdding]="transform" [dragZone]="'skillZone'">
       </tag-input>
     </label>

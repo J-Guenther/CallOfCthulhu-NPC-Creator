@@ -13,6 +13,7 @@ export class Character {
 
     sanity: number;
     health: number;
+    magicPoints: number;
     damageBonus: string;
     build: number;
     move: number;
@@ -41,6 +42,7 @@ export class Character {
 
       this.sanity = 0;
       this.health = 0;
+      this.magicPoints = 0;
       this.damageBonus = '';
       this.build = 0;
       this.move = 0;

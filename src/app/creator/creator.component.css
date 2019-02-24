@@ -17,9 +17,27 @@ textarea{
     width: 100%;
 }
 
+.boxsizingBorder {
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
 .randomize-button{
     width: 24px;
     height: 24px;
     border-width: 0 0 0 0;
     padding: 0 0 0 0;
 }
+
+.smallDescription{
+    font-size: 0.6em;
+}
+
+input {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #000000;
+    border-radius: 0px;
+}
+

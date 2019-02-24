@@ -33,7 +33,7 @@ export class CreatorComponent implements OnInit {
     
     
       let percentage = finalTag.match(/\d+/g);
-      if(finalTag.length > 0 && Number(percentage)){
+      if(finalTag.length > 0 && Math.floor(Number(percentage))){
         finalTag += "% (" + Number(percentage)/2 + "/" + Number(percentage)/5 + ")";	
       }	
     } else{
@@ -95,15 +95,19 @@ export class CreatorComponent implements OnInit {
   }
 
   CalculateDodge(){
-    this.character.dodge = this.character.dexterity/2;
+    this.character.dodge = Math.floor(this.character.dexterity/2);
   }
 
   CalculateHp(){
-    this.character.health = (this.character.constitution + this.character.size) / 10;
+    this.character.health = Math.floor((this.character.constitution + this.character.size) / 10);
   }
 
   CalculateSanity(){
     this.character.sanity = this.character.power;
+  }
+
+  CalculateMP(){
+    this.character.magicPoints = Math.floor(this.character.power / 5);
   }
 
   StrChange(){
@@ -128,6 +132,7 @@ export class CreatorComponent implements OnInit {
 
   PowChange(){
     this.CalculateSanity();
+    this.CalculateMP();
   }
 
   RandomD3(): number{
